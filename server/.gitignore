@@ -9,7 +9,6 @@ lerna-debug.log*
 
 # Dependencies
 node_modules
-/node_modules/
 
 # Build output
 dist
@@ -21,9 +20,6 @@ build
 .env
 .env.local
 .env.*.local
-.env.development.local
-.env.test.local
-.env.production.local
 
 # Editor directories and files
 .vscode/*
@@ -43,19 +39,6 @@ prisma/migrations/*
 # Testing
 coverage
 *.lcov
-.nyc_output
 
 # OS files
 Thumbs.db
-.DS_Store
-
-# Temporary files
-*.tmp
-*.temp
-.cache
-
-# Production builds
-/client/dist
-/server/dist
-/client/build
-/server/build
