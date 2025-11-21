@@ -1,0 +1,339 @@
+<HRMSProjectPrompt version="3.0">
+
+  <!-- PROJECT SUMMARY -->
+  <project>
+    <name>Fullstack Enterprise HRMS System</name>
+    <goal>
+      Build a secure, scalable and role-based HRMS (Human Resource Management System)
+      with Attendance, Leave, Task Tracking, Recruitment, Payroll, Performance,
+      Training, Asset Management, Expense Management, Shifts, Document Vault,
+      Multi-branch support, Messaging, and more.
+    </goal>
+    <technology_stack>
+      <frontend>React / Next.js / Angular / Vue</frontend>
+      <backend>Node.js (Express/NestJS) / Python (Django/FastAPI) / Java (Spring Boot)</backend>
+      <database>PostgreSQL / MySQL</database>
+      <authentication>JWT + Refresh Token + RBAC (Role Based Access Control)</authentication>
+      <deployment>Docker + CI/CD + Cloud Ready</deployment>
+    </technology_stack>
+  </project>
+
+  <!-- ROLES AND PERMISSIONS -->
+  <roles_and_access>
+    <role id="SUPER_ADMIN">
+      <description>Full platform control.</description>
+      <permissions>
+        <permission>*</permission>
+      </permissions>
+    </role>
+
+    <role id="HR_MANAGER">
+      <permissions>
+        <permission>MANAGE_EMPLOYEES</permission>
+        <permission>MANAGE_ATTENDANCE</permission>
+        <permission>MANAGE_LEAVES</permission>
+        <permission>MANAGE_RECRUITMENT</permission>
+        <permission>MANAGE_PERFORMANCE</permission>
+        <permission>MANAGE_TRAINING</permission>
+        <permission>MANAGE_ASSETS</permission>
+        <permission>MANAGE_EXPENSES</permission>
+        <permission>MANAGE_SHIFTS</permission>
+        <permission>POST_ANNOUNCEMENTS</permission>
+        <permission>UPLOAD_DOCUMENTS</permission>
+      </permissions>
+    </role>
+
+    <role id="TEAM_LEAD">
+      <permissions>
+        <permission>VIEW_TEAM</permission>
+        <permission>ASSIGN_TASKS</permission>
+        <permission>APPROVE_LEAVES</permission>
+        <permission>RATE_INTERVIEWS</permission>
+        <permission>APPROVE_EXPENSES</permission>
+        <permission>VIEW_TEAM_ATTENDANCE</permission>
+      </permissions>
+    </role>
+
+    <role id="EMPLOYEE">
+      <permissions>
+        <permission>MARK_SELF_ATTENDANCE</permission>
+        <permission>REQUEST_LEAVE</permission>
+        <permission>UPDATE_TASK_STATUS</permission>
+        <permission>VIEW_SELF_DOCUMENTS</permission>
+        <permission>VIEW_ANNOUNCEMENTS</permission>
+        <permission>SUBMIT_EXPENSE</permission>
+        <permission>VIEW_ASSIGNED_SHIFTS</permission>
+      </permissions>
+    </role>
+
+    <role id="ACCOUNTANT">
+      <permissions>
+        <permission>MANAGE_PAYROLL</permission>
+        <permission>VIEW_SALARY_INFO</permission>
+        <permission>MANAGE_REIMBURSEMENTS</permission>
+      </permissions>
+    </role>
+
+    <role id="SECURITY_STAFF">
+      <permissions>
+        <permission>MANAGE_VISITORS</permission>
+      </permissions>
+    </role>
+  </roles_and_access>
+
+
+  <!-- MODULES -->
+  <modules>
+
+    <!-- EMPLOYEE MANAGEMENT -->
+    <module id="EMPLOYEE_MANAGEMENT">
+      <description>Manage all employee data and access levels.</description>
+      <features>
+        <feature>Create, update, delete employees</feature>
+        <feature>Department & designation mapping</feature>
+        <feature>Role assignment</feature>
+      </features>
+    </module>
+
+    <!-- ATTENDANCE -->
+    <module id="ATTENDANCE">
+      <description>Track attendance via manual, web, biometric or GPS.</description>
+      <features>
+        <feature>Check-in / Check-out</feature>
+        <feature>Total hours calculation</feature>
+        <feature>Late/early detection</feature>
+        <feature>Monthly attendance reports</feature>
+        <feature>Biometric sync</feature>
+        <feature>Geo-attendance for field employees</feature>
+      </features>
+    </module>
+
+    <!-- LEAVES -->
+    <module id="LEAVE_MANAGEMENT">
+      <description>Complete leave workflow with approvals.</description>
+      <features>
+        <feature>Leave types, balances, rules</feature>
+        <feature>Leave request & approval</feature>
+        <feature>Calendar integration</feature>
+      </features>
+    </module>
+
+    <!-- TASK MANAGEMENT -->
+    <module id="TASK_TRACKING">
+      <features>
+        <feature>Create tasks</feature>
+        <feature>Assign tasks to team</feature>
+        <feature>Status updates (To-Do, In-Progress, Completed)</feature>
+        <feature>Comments + Activity logs</feature>
+      </features>
+    </module>
+
+    <!-- RECRUITMENT -->
+    <module id="RECRUITMENT">
+      <features>
+        <feature>Job posting</feature>
+        <feature>Candidate pipeline</feature>
+        <feature>Interview scheduling</feature>
+        <feature>Interviewer rating</feature>
+        <feature>Offer letter generator</feature>
+      </features>
+    </module>
+
+    <!-- PERFORMANCE -->
+    <module id="PERFORMANCE_MANAGEMENT">
+      <features>
+        <feature>Goal/KPI tracking</feature>
+        <feature>Self review</feature>
+        <feature>Manager review</feature>
+        <feature>Appraisal cycles</feature>
+      </features>
+    </module>
+
+    <!-- TRAINING -->
+    <module id="TRAINING">
+      <features>
+        <feature>Course creation</feature>
+        <feature>Training tracking</feature>
+        <feature>Certificates upload</feature>
+        <feature>Skill matrix</feature>
+      </features>
+    </module>
+
+    <!-- ANNOUNCEMENTS -->
+    <module id="ANNOUNCEMENTS">
+      <features>
+        <feature>Pinned announcements</feature>
+        <feature>Push notification</feature>
+      </features>
+    </module>
+
+    <!-- VISITORS -->
+    <module id="VISITOR_MANAGEMENT">
+      <features>
+        <feature>Visitor entry</feature>
+        <feature>Host notification</feature>
+        <feature>Visitor pass generator</feature>
+      </features>
+    </module>
+
+    <!-- ASSET MANAGEMENT -->
+    <module id="ASSET_MANAGEMENT">
+      <features>
+        <feature>Assign assets</feature>
+        <feature>Return workflow</feature>
+        <feature>Maintenance records</feature>
+      </features>
+    </module>
+
+    <!-- EXPENSE MANAGEMENT -->
+    <module id="EXPENSE_MANAGEMENT">
+      <features>
+        <feature>Expense submission</feature>
+        <feature>Manager approval</feature>
+        <feature>Finance verification</feature>
+      </features>
+    </module>
+
+    <!-- SHIFT MANAGEMENT -->
+    <module id="SHIFT_MANAGEMENT">
+      <features>
+        <feature>Create shifts</feature>
+        <feature>Assign employee shifts</feature>
+        <feature>Shift swapping requests</feature>
+      </features>
+    </module>
+
+    <!-- DOCUMENT VAULT -->
+    <module id="DOCUMENT_VAULT">
+      <features>
+        <feature>Employee document storage</feature>
+        <feature>Auto generated documents (NOC, Relieving)</feature>
+        <feature>Role-based visibility</feature>
+      </features>
+    </module>
+
+    <!-- INTERNAL MESSAGING -->
+    <module id="MESSAGING">
+      <features>
+        <feature>1-to-1 chat</feature>
+        <feature>Task-based chat</feature>
+      </features>
+    </module>
+
+    <!-- MULTI BRANCH -->
+    <module id="MULTI_BRANCH">
+      <features>
+        <feature>Create branches</feature>
+        <feature>Assign employees to branch</feature>
+        <feature>Branch-wise attendance</feature>
+      </features>
+    </module>
+
+    <!-- FULL PAYROLL ENGINE -->
+    <module id="PAYROLL">
+      <features>
+        <feature>Salary components</feature>
+        <feature>PF/ESI</feature>
+        <feature>Tax slabs</feature>
+        <feature>Monthly payslip</feature>
+        <feature>Bank transfer file</feature>
+      </features>
+    </module>
+
+  </modules>
+
+
+  <!-- DATA MODEL -->
+  <data_model>
+    <entities>
+      <entity name="User">
+        <field name="id" type="UUID" />
+        <field name="email" type="string" />
+        <field name="password_hash" type="string" />
+        <field name="role" type="enum" />
+      </entity>
+
+      <entity name="EmployeeProfile">
+        <field name="user_id" type="UUID" />
+        <field name="department" type="string" />
+        <field name="designation" type="string" />
+      </entity>
+
+      <entity name="AttendanceRecord">
+        <field name="user_id" type="UUID" />
+        <field name="check_in" type="datetime" />
+        <field name="check_out" type="datetime" />
+      </entity>
+
+      <entity name="LeaveRequest">
+        <field name="user_id" type="UUID" />
+        <field name="type" type="string" />
+        <field name="status" type="enum" />
+      </entity>
+
+      <entity name="Task"/>
+      <entity name="Candidate"/>
+      <entity name="Interview"/>
+      <entity name="PerformanceReview"/>
+      <entity name="TrainingSession"/>
+      <entity name="Announcement"/>
+      <entity name="Visitor"/>
+      <entity name="Asset"/>
+      <entity name="Expense"/>
+      <entity name="Shift"/>
+      <entity name="Document"/>
+      <entity name="Branch"/>
+      <entity name="PayrollRecord"/>
+    </entities>
+  </data_model>
+
+
+  <!-- API LAYER -->
+  <api_spec>
+    <endpoint method="POST" path="/auth/login" />
+    <endpoint method="POST" path="/attendance/check-in" />
+    <endpoint method="POST" path="/attendance/check-out" />
+    <endpoint method="POST" path="/leaves/request" />
+    <endpoint method="POST" path="/tasks" />
+    <endpoint method="GET" path="/recruitment/candidates" />
+    <endpoint method="POST" path="/performance/review" />
+    <endpoint method="POST" path="/assets/assign" />
+    <endpoint method="POST" path="/expenses/submit" />
+    <endpoint method="POST" path="/shifts/assign" />
+    <endpoint method="POST" path="/documents/upload" />
+    <endpoint method="GET" path="/messaging/inbox" />
+    <endpoint method="GET" path="/payroll/monthly" />
+  </api_spec>
+
+
+  <!-- UI SCREENS -->
+  <ui_screens>
+    <screen>Login</screen>
+    <screen>Role-Based Dashboard</screen>
+    <screen>Attendance</screen>
+    <screen>Leaves</screen>
+    <screen>Tasks</screen>
+    <screen>Recruitment</screen>
+    <screen>Performance</screen>
+    <screen>Training</screen>
+    <screen>Assets</screen>
+    <screen>Expenses</screen>
+    <screen>Shifts</screen>
+    <screen>Documents</screen>
+    <screen>Messaging</screen>
+    <screen>Payroll</screen>
+    <screen>Admin Settings</screen>
+  </ui_screens>
+
+
+  <!-- NON-FUNCTIONAL REQUIREMENTS -->
+  <non_functional>
+    <requirement>RBAC-secured APIs</requirement>
+    <requirement>Responsive UI</requirement>
+    <requirement>Form validation</requirement>
+    <requirement>Audit logs</requirement>
+    <requirement>Optimized DB indexing</requirement>
+    <requirement>High performance APIs</requirement>
+  </non_functional>
+
+</HRMSProjectPrompt>

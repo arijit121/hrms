@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const leaveController_1 = require("../controllers/leaveController");
+const authMiddleware_1 = require("../middleware/authMiddleware");
+const client_1 = require("@prisma/client");
+const router = (0, express_1.Router)();
+router.use(authMiddleware_1.authenticate);
+router.post('/', leaveController_1.requestLeave);
+router.get('/me', leaveController_1.getMyLeaves);
+router.get('/', (0, authMiddleware_1.authorize)([client_1.Role.SUPER_ADMIN, client_1.Role.HR_MANAGER, client_1.Role.TEAM_LEAD]), leaveController_1.getAllLeaves);
+router.put('/:id/status', (0, authMiddleware_1.authorize)([client_1.Role.SUPER_ADMIN, client_1.Role.HR_MANAGER, client_1.Role.TEAM_LEAD]), leaveController_1.updateLeaveStatus);
+exports.default = router;

@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const performanceController_1 = require("../controllers/performanceController");
+const authMiddleware_1 = require("../middleware/authMiddleware");
+const client_1 = require("@prisma/client");
+const router = (0, express_1.Router)();
+router.use(authMiddleware_1.authenticate);
+router.post('/', (0, authMiddleware_1.authorize)([client_1.Role.SUPER_ADMIN, client_1.Role.HR_MANAGER]), performanceController_1.initiateAppraisal);
+router.get('/me', performanceController_1.getMyAppraisals);
+router.put('/:id/self', performanceController_1.updateSelfAppraisal);
+router.put('/:id/manager', (0, authMiddleware_1.authorize)([client_1.Role.SUPER_ADMIN, client_1.Role.HR_MANAGER, client_1.Role.TEAM_LEAD]), performanceController_1.updateManagerAppraisal);
+router.post('/:appraisalId/goals', performanceController_1.addGoal);
+exports.default = router;
