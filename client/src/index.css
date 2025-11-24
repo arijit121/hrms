@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 238 242 255; /* primary-50 */
+    --foreground: 30 27 75; /* primary-950 */
+  }
+
+  body {
+    @apply bg-primary-50 text-primary-950 font-sans antialiased;
+    background-image: linear-gradient(to bottom right, #eef2ff, #f0fdf4, #fdf4ff);
+    min-height: 100vh;
+  }
+}

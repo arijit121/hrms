@@ -41,9 +41,9 @@ const App: React.FC = () => {
             path="/*"
             element={
               <ProtectedRoute>
-                <div style={{ display: 'flex' }}>
+                <div className="flex min-h-screen bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
                   <Sidebar />
-                  <div style={{ flex: 1, padding: '1rem' }}>
+                  <div className="flex-1 p-6 overflow-auto">
                     <Routes>
                       <Route path="dashboard" element={<Dashboard />} />
                       <Route path="departments" element={<Departments />} />

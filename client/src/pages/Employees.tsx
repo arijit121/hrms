@@ -131,6 +131,21 @@ const Employees: React.FC = () => {
                             {!isEditing && (
                                 <>
                                     <div>
+                                        <label style={{ display: 'block', marginBottom: '0.25rem' }}>Role</label>
+                                        <select
+                                            value={currentEmployee.role || 'EMPLOYEE'}
+                                            onChange={(e) => setCurrentEmployee({ ...currentEmployee, role: e.target.value })}
+                                            style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid #ddd' }}
+                                        >
+                                            <option value="EMPLOYEE">Employee</option>
+                                            <option value="SUPER_ADMIN">Super Admin</option>
+                                            <option value="HR_MANAGER">HR Manager</option>
+                                            <option value="TEAM_LEAD">Team Lead</option>
+                                            <option value="ACCOUNTANT">Accountant</option>
+                                            <option value="SECURITY_STAFF">Security Staff</option>
+                                        </select>
+                                    </div>
+                                    <div>
                                         <label style={{ display: 'block', marginBottom: '0.25rem' }}>Email</label>
                                         <input
                                             type="email"

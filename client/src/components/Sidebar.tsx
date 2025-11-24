@@ -12,7 +12,7 @@ const menuItems: MenuItem[] = [
     { path: '/dashboard', label: 'Dashboard', allowedRoles: ['SUPER_ADMIN', 'HR_MANAGER', 'TEAM_LEAD', 'EMPLOYEE', 'ACCOUNTANT', 'SECURITY_STAFF'] },
     { path: '/departments', label: 'Departments', allowedRoles: ['SUPER_ADMIN', 'HR_MANAGER'] },
     { path: '/employees', label: 'Employees', allowedRoles: ['SUPER_ADMIN', 'HR_MANAGER', 'TEAM_LEAD'] },
-    { path: '/register', label: 'Register User', allowedRoles: ['SUPER_ADMIN', 'HR_MANAGER'] },
+    // { path: '/register', label: 'Register User', allowedRoles: ['SUPER_ADMIN', 'HR_MANAGER'] },
     { path: '/attendance', label: 'Attendance', allowedRoles: ['SUPER_ADMIN', 'HR_MANAGER', 'TEAM_LEAD', 'EMPLOYEE'] },
     { path: '/leave', label: 'Leave', allowedRoles: ['SUPER_ADMIN', 'HR_MANAGER', 'TEAM_LEAD', 'EMPLOYEE'] },
     { path: '/tasks', label: 'Tasks', allowedRoles: ['SUPER_ADMIN', 'HR_MANAGER', 'TEAM_LEAD', 'EMPLOYEE'] },
